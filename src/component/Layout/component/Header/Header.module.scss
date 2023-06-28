@@ -1,4 +1,8 @@
 .wrapper {
+  --seacg-border-radius: 92px;
+  --seach-height: 46px;
+  --seach-top-spacer: 9px;
+  --seach-button-wight: 52px;
   height: var(--defaul-layout-hd);
   width: 100%;
   box-shadow: 0px 1px 1px black;
@@ -8,5 +12,73 @@
 .content {
   height: 100%;
   width: var(--defaul-layout-wg);
-  background-color: aquamarine;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-img {
+  width: 118px;
+}
+.logo {
+}
+.seach {
+  position: relative;
+  width: 361px;
+  height: var(--seach-height);
+  background-color: rgb(226, 226, 226);
+  border-radius: var(--seacg-border-radius);
+  padding-left: 16px;
+  display: flex;
+  border: 1.5px solid transparent;
+
+  input {
+    flex: 1;
+    height: 100%;
+    color: var(--black);
+    font-size: 1.6rem;
+    background-color: transparent;
+    caret-color: red;
+  }
+  input:not(:placeholder-shown) ~ .seach-btn {
+    color: black;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: var(--seach-top-spacer);
+    right: var(--seach-button-wight);
+    width: 1px;
+    height: calc(var(--seach-height) - var(--seach-top-spacer) * 2);
+    background-color: rgba(22, 24, 35, 0.12);
+  }
+  &:focus-within {
+    border-color: black;
+  }
+}
+.clear,
+.loading {
+  position: absolute;
+  right: calc(var(--seach-button-wight) + 16px);
+  top: 50%;
+  transform: translateY(-50%);
+  color: darkgray;
+}
+.loading {
+}
+.seach-btn {
+  width: var(--seach-button-wight);
+  height: 100%;
+  border-top-right-radius: var(--seacg-border-radius);
+  border-bottom-right-radius: var(--seacg-border-radius);
+  font-size: 1.8rem;
+  color: rgba(22, 24, 35, 0.34);
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(22, 24, 35, 0.03);
+  }
+  &:active {
+    background-color: rgba(22, 24, 35, 0.06);
+  }
 }
