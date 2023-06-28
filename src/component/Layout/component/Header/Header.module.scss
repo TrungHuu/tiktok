@@ -23,9 +23,13 @@
 }
 .logo {
 }
+.seach,
+.seach-result {
+  width: 361px;
+}
 .seach {
   position: relative;
-  width: 361px;
+
   height: var(--seach-height);
   background-color: rgb(226, 226, 226);
   border-radius: var(--seacg-border-radius);
@@ -56,6 +60,11 @@
   &:focus-within {
     border-color: black;
   }
+}
+.search-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: rgb(102, 101, 101);
 }
 .clear,
 .loading {
